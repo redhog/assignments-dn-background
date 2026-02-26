@@ -33,8 +33,8 @@
     Task: Build a production ready system for geophysics.
     Action(s): Teach python data science ecosystem & software design
       principles to physicists, teach django to front-end dev to become
-      full-stack. Get team to use an agine development methodology.
-    Result: Produced an full system for processing, inversion and
+      full-stack. Get team to use an agile development methodology.
+    Result: Produced a full system for processing, inversion and
       visualization of geophysical data within a year.
 
   * PhD level code to production system
@@ -48,6 +48,17 @@
     Result: A codebase possible to understand in terms of what the
       functionality described by the physicists that could be extended
       to a full stand alone tool.
+ 
+  * Open Source
+    Situation: Management and board from physics and engineering
+      background with expericence of open source.
+    Task: Increase value of non-core IP
+    Action: Convinced management of the value open source for lowering
+      maintenance work and getting market goodwill.    
+    Result: External contributions to some of our tools - e.g. from
+      NGI. Our open source projects gave visibility in the norwegian
+      market during a time with few norwegian infra. projects, e.g. at
+      Geoteknikkdagen.
 
 - Open source and AI for media
   - AI enables stories that would otherwise be practicall impossible -
