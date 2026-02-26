@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Role Success & AI Platform Strategy</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Font Awesome -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+  <!-- jQuery -->
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+  <style>
+    html, body {
+      height: 100%;
+      overflow: hidden;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+    }
+
+    body {
+      background: #0f172a;
+      color: #f8fafc;
+    }
+
+    /* Layout */
+    .app {
+      display: flex;
+      height: 100vh;
+    }
+
+    /* Sidebar */
+    .sidebar {
+      width: 260px;
+      background: #020617;
+      padding: 1.5rem 1rem;
+      border-right: 1px solid #1e293b;
+    }
+
+    .sidebar h6 {
+      color: #38bdf8;
+      text-transform: uppercase;
+      font-size: 0.75rem;
+      margin-top: 1.5rem;
+    }
+
+    .sidebar a {
+      display: block;
+      color: #cbd5f5;
+      text-decoration: none;
+      padding: 0.4rem 0.6rem;
+      border-radius: 6px;
+      margin-bottom: 0.25rem;
+      font-size: 0.9rem;
+    }
+
+    .sidebar a.active,
+    .sidebar a:hover {
+      background: #1e293b;
+      color: #fff;
+    }
+
+    /* Slides container */
+    .slides {
+      flex: 1;
+      height: 100vh;
+      overflow-y: scroll;
+      scroll-snap-type: y mandatory;
+      scroll-behavior: smooth;
+    }
+
+    .slide {
+      height: 100vh;
+      scroll-snap-align: start;
+      padding: 4rem 6rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      background-size: cover;
+      background-position: center;
+      position: relative;
+    }
+
+    .slide::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(2, 6, 23, 0.75);
+    }
+
+    .slide-content {
+      position: relative;
+      max-width: 900px;
+    }
+
+    h1, h2 {
+      font-weight: 700;
+    }
+
+    h1 i, h2 i {
+      color: #38bdf8;
+      margin-right: 0.5rem;
+    }
+
+    ul li {
+      margin-bottom: 0.75rem;
+      font-size: 1.1rem;
+    }
+
+    .chapter-title {
+      font-size: 3rem;
+    }
+
+    /* Background themes */
+    .bg-goals { background-image: url("https://images.unsplash.com/photo-1498050108023-c5249f4df085"); }
+    .bg-priorities { background-image: url("https://images.unsplash.com/photo-1518770660439-4636190af475"); }
+    .bg-process { background-image: url("https://images.unsplash.com/photo-1529333166437-7750a6dd5a70"); }
+    .bg-techdebt { background-image: url("https://images.unsplash.com/photo-1581090700227-1e37b190418e"); }
+    .bg-oss { background-image: url("https://images.unsplash.com/photo-1531482615713-2afd69097998"); }
+    .bg-questions { background-image: url("https://images.unsplash.com/photo-1553877522-43269d4ea984"); }
+
+    /* Responsive */
+    @media (max-width: 992px) {
+      .sidebar {
+        display: none;
+      }
+      .slide {
+        padding: 3rem 2rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+<div class="app">
+
+  <!-- Sidebar -->
+  <nav class="sidebar">
+    <h6>Chapters</h6>
+    <a href="#intro">Role Success</a>
+    <a href="#experience">Prior Experience</a>
+    <a href="#oss">Open Source & AI</a>
+    <a href="#marianne">Questions: Marianne & Roar</a>
+    <a href="#dni">Questions: D&I Seniors</a>
+    <a href="#igor">Questions: Igor & Kristin</a>
+  </nav>
+
+  <!-- Slides -->
+  <main class="slides">
+
+    <!-- Intro Chapter -->
+    <section id="intro" class="slide bg-goals">
+      <div class="slide-content">
+        <h1 class="chapter-title"><i class="fa-solid fa-bullseye"></i>Role Success</h1>
+        <p class="lead mt-4">
+          What matters most to succeed in this role, and how it should work
+          practically to deliver value.
+        </p>
+      </div>
+    </section>
+
+    <section class="slide bg-goals">
+      <div class="slide-content">
+        <h2><i class="fa-solid fa-diagram-project"></i>Well-Defined Goals</h2>
+        <ul>
+          <li>Clear short- and long-term goals are essential in a broad role</li>
+          <li>Translate ambiguity into concrete, measurable outcomes</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="slide bg-priorities">
+      <div class="slide-content">
+        <h2><i class="fa-solid fa-arrows-rotate"></i>Iterative Refinement</h2>
+        <ul>
+          <li>Revisit and refine goals continuously</li>
+          <li>Apply agile thinking to role impact and scope</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="slide bg-priorities">
+      <div class="slide-content">
+        <h2><i class="fa-solid fa-scale-balanced"></i>Hard Prioritization</h2>
+        <ul>
+          <li>Optimize for impact across product teams</li>
+          <li>Minimize duplicate effort and functionality</li>
+          <li>Shared model services over per-team models</li>
+          <li>Identify shared libraries opportunities</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="slide bg-process">
+      <div class="slide-content">
+        <h2><i class="fa-solid fa-screwdriver-wrench"></i>Avoid Overengineering</h2>
+        <ul>
+          <li>Match solutions to current team size</li>
+          <li>Favor pragmatic, evolvable architectures</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="slide bg-process">
+      <div class="slide-content">
+        <h2><i class="fa-solid fa-seedling"></i>Start with Learning</h2>
+        <ul>
+          <li>Understand current datasets, systems, and processes</li>
+          <li>Identify low-hanging fruit</li>
+          <li>Course-correct based on outcomes</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Experience Chapter -->
+    <section id="experience" class="slide bg-techdebt">
+      <div class="slide-content">
+        <h1 class="chapter-title"><i class="fa-solid fa-clock-rotate-left"></i>Prior Experience (STAR)</h1>
+      </div>
+    </section>
+
+    <section class="slide bg-techdebt">
+      <div class="slide-content">
+        <h2><i class="fa-solid fa-triangle-exclamation"></i>Situation</h2>
+        <ul>
+          <li>Short-term delivery goals accumulated significant technical debt</li>
+          <li>Low leadership awareness of development overhead</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="slide bg-techdebt">
+      <div class="slide-content">
+        <h2><i class="fa-solid fa-list-check"></i>Task</h2>
+        <ul>
+          <li>Get leadership buy-in for prioritizing cleanup</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="slide bg-techdebt">
+      <div class="slide-content">
+        <h2><i class="fa-solid fa-coins"></i>Action</h2>
+        <ul>
+          <li>Quantified architectural limitations in monetary terms</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="slide bg-techdebt">
+      <div class="slide-content">
+        <h2><i class="fa-solid fa-chart-line"></i>Result</h2>
+        <ul>
+          <li>20% cleanup budget for one year</li>
+          <li>Nearly all development-blocking tech debt addressed</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- OSS Chapter -->
+    <section id="oss" class="slide bg-oss">
+      <div class="slide-content">
+        <h1 class="chapter-title"><i class="fa-brands fa-osi"></i>Open Source & AI for Media</h1>
+      </div>
+    </section>
+
+    <section class="slide bg-oss">
+      <div class="slide-content">
+        <h2><i class="fa-solid fa-newspaper"></i>AI-Enabled Storytelling</h2>
+        <ul>
+          <li>Large-scale public record analysis</li>
+          <li>Transparency investigations</li>
+          <li>Decades-spanning text archives</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="slide bg-oss">
+      <div class="slide-content">
+        <h2><i class="fa-solid fa-robot"></i>LLMs + Data Science</h2>
+        <ul>
+          <li>Extract numerical data from unstructured text</li>
+          <li>Use traditional data science to surface stories</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="slide bg-oss">
+      <div class="slide-content">
+        <h2><i class="fa-solid fa-code-branch"></i>Open Source as Risk Reduction</h2>
+        <ul>
+          <li>Code is a necessary liability</li>
+          <li>Open source distributes cost and risk</li>
+          <li>Enables synergy across unrelated businesses</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="slide bg-oss">
+      <div class="slide-content">
+        <h2><i class="fa-solid fa-language"></i>Reusable Abstractions</h2>
+        <ul>
+          <li>Domain-specific languages for power users</li>
+          <li>From textproc experience to docetl contribution</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Questions Chapters -->
+    <section id="marianne" class="slide bg-questions">
+      <div class="slide-content">
+        <h1 class="chapter-title"><i class="fa-solid fa-comments"></i>Questions: Marianne & Roar</h1>
+        <ul class="mt-4">
+          <li>How do you balance tools for recommendations, personalization, journalism, and productivity?</li>
+          <li>How do you balance experimentation vs productization?</li>
+          <li>What works well vs not in D&I and product collaboration?</li>
+          <li>Biggest hurdles getting AI services into active use?</li>
+          <li>Biggest architectural risks or technical debt?</li>
+          <li>When do you decide an AI experiment isn’t working?</li>
+          <li>How does Data/AI platform evolve vs Core Engineering?</li>
+          <li>Current dataflow patterns? Is there a system map?</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="dni" class="slide bg-questions">
+      <div class="slide-content">
+        <h1 class="chapter-title"><i class="fa-solid fa-people-group"></i>Questions: D&amp;I Seniors</h1>
+        <ul class="mt-4">
+          <li>How do you collaborate with the Dhaka team?</li>
+          <li>Sync vs async communication balance?</li>
+          <li>Division of responsibility for experimental systems?</li>
+          <li>How is week-to-week work organized?</li>
+          <li>Team strengths vs weaker areas?</li>
+          <li>Missing tools, libraries, or frameworks?</li>
+          <li>How are experiments and model versions tracked?</li>
+          <li>How is production performance monitored?</li>
+          <li>How is GDPR handled in model training?</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="igor" class="slide bg-questions">
+      <div class="slide-content">
+        <h1 class="chapter-title"><i class="fa-solid fa-flag-checkered"></i>Questions: Igor & Kristin</h1>
+        <ul class="mt-4">
+          <li>In 3 months, what should I have learned?</li>
+          <li>In 18 months, what defines success?</li>
+        </ul>
+      </div>
+    </section>
+
+  </main>
+</div>
+
+<script>
+  const sections = document.querySelectorAll(".slide");
+  const navLinks = document.querySelectorAll(".sidebar a");
+  const slidesContainer = document.querySelector(".slides");
+
+  slidesContainer.addEventListener("scroll", () => {
+    let index = Math.round(slidesContainer.scrollTop / window.innerHeight);
+    navLinks.forEach(link => link.classList.remove("active"));
+    const id = sections[index]?.id;
+    if (id) {
+      document.querySelector(`.sidebar a[href="#${id}"]`)?.classList.add("active");
+    }
+  });
+</script>
+
+</body>
+</html>

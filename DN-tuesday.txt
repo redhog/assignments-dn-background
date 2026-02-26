@@ -1,0 +1,96 @@
+- Short summary of what is most important to succeed in this role - maybe even how the role should work practically to provide value
+  * Well-defined short- and long-term goals - it's a broad role, so,
+    so translating it into concrete, measurable outcomes is essential.
+  * Concrete goals should be revisited and refined iteratively -
+    similar to agile development cycles, but applied to the impact and
+    scope of the role itself.
+  * Hard prioritization for impact. Ideally: balance priorities of
+    product teams so that duplicate effort and functionality is
+    minimized
+    - E.g. shared model services over per-team models
+    - Identify opportunities to develop shared libraries
+  * Avoid overengineering solutions for the team size
+  * Start: Learn current datasets, systems and processes, discuss and
+    identify opportunities for changes or additions that are low
+    hanging fruites. Course correct as needed based on outcome.
+
+- Previous exp. supporting this, use STAR technique
+
+  * Technical debts story
+    Situation: Short term delivery goals had accrued a lot of
+      technical debts. Leadership understanding of development overhead
+      due to this was low.
+    Task: Get leadership buy-in on prioritizing cleanup
+    Action: Putting monetary value on architectural limitations
+    Result: 20% cleanup budget for a year resulted in nearly all
+      tech debt slowing down development being adressed.
+
+- Open source and AI for media
+  - AI enables stories that would otherwise be practicall impossible -
+    especially large-scale public record analysis, transparency
+    investigations, and structured extraction across decades of text
+    archives.
+  - LLMs as a way to extract numerical data from large unstructured
+    text corpus like government records, trad. data science to then
+    extract the story from those numerical values
+  - Code is a necessary liability to deliver functionality - and open
+    source limits the liability for each individual user and
+    contributor.
+  - Open source allows for synergy effects between unrelated business
+    ventures that happen to have overlapping functionality needs.
+  - Task from last time (textproc) - not the code, but as a story - compare docetl contribution
+    - Domain specific languages as a way to deliver reusable and
+      generic functionality to non-coding power users
+
+Questions for Marianne & Roar:
+
+- How do you currently balance between building tools for
+  recommendations, personalization, newsroom/journalism and internal
+  productivity?
+- How do you currently balance experimentation vs. productization?
+- What works well vs not in the current collaboration between D&I and product teams?
+- What are the typical biggest hurdles in getting a new (AI) service into active use?
+- What are the biggest architectural risks and/or technical debt today?
+- How and when do you decide if an AI experiment or software isn't
+  working (for the organization)?
+- How do you see the Data/AI platform evolving relative to Core Engineering?
+- What's the current dataflow - streaming, batching, event/callback
+  driven? Is there a map of the data streams between departments and
+  subsystems?
+
+Questions for D&I Seniorer
+
+- What tools and processes do you use to collaborate with the Dhaka
+  team? How much is sync vs async comms?
+- Where do you draw the line between what the Dhaka team does vs you
+  do locally, esp. for experimental / testing systems?
+- How do you organize the week-to-week work of the team?
+- What types of problems is the team good at solving vs where are you
+  currently less strong?
+- What kind of tools (libraries, frameworks etc) do you currently
+  think you lack that would help you the most?
+- How do you currently track experiments, version models and
+  training/prediction code?
+- How do you track production performance?
+- How do you handle GDPR compliance, esp. in model training?
+
+
+Questions for Igor and Kristin
+
+- In 3 months, what should I have learnt? Platform mapping, production
+  ML, infra, use cases?
+- In 18 months, what would be considered success? More platform
+  maturity, shipped AI products, cost optimization, research impact,
+  or internal competency lift?
+
+
+
+Plan:
+09:30 - 10:00 - Chief Architect, Chief Product and Technology Officer (Marianne og Roar)
+  - Ask about AI, product org, data
+10:00 - 10:30 - Data Analytics Lead, Data Architect/Engineer, Data Platform Engineer (team lead in Dhaka) (D&I Seniorer)
+  - Ask how the team is, what they're good at, what they work with, how they cooperate w the Dhaka team
+10:30 - 11:00 - Igor & Kristin
+11:00 - 11:30 - lunsj
+
+Velkommen!
