@@ -2,21 +2,34 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Role Success & AI Platform Strategy</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Role Success & AI Platform Discussion – Slideshow</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <!-- Bootstrap -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap CSS -->
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+  />
+
   <!-- Font Awesome -->
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+  />
+
   <!-- jQuery -->
   <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+  <!-- Bootstrap JS -->
+  <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+  ></script>
 
   <style>
     html, body {
       height: 100%;
       overflow: hidden;
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
     }
 
     body {
@@ -27,36 +40,36 @@
     /* Layout */
     .app {
       display: flex;
-      height: 100vh;
+      height: 100%;
+      width: 100%;
     }
 
     /* Sidebar */
     .sidebar {
       width: 260px;
-      background: #020617;
+      background: linear-gradient(180deg, #020617, #020617dd);
       padding: 1.5rem 1rem;
       border-right: 1px solid #1e293b;
     }
 
-    .sidebar h6 {
-      color: #38bdf8;
-      text-transform: uppercase;
-      font-size: 0.75rem;
-      margin-top: 1.5rem;
+    .sidebar h5 {
+      font-weight: 700;
+      margin-bottom: 1rem;
+      color: #e2e8f0;
     }
 
-    .sidebar a {
+    .toc a {
       display: block;
+      padding: 0.5rem 0.75rem;
+      margin-bottom: 0.25rem;
       color: #cbd5f5;
       text-decoration: none;
-      padding: 0.4rem 0.6rem;
       border-radius: 6px;
-      margin-bottom: 0.25rem;
-      font-size: 0.9rem;
+      font-size: 0.95rem;
     }
 
-    .sidebar a.active,
-    .sidebar a:hover {
+    .toc a:hover,
+    .toc a.active {
       background: #1e293b;
       color: #fff;
     }
@@ -64,22 +77,21 @@
     /* Slides container */
     .slides {
       flex: 1;
-      height: 100vh;
+      height: 100%;
       overflow-y: scroll;
       scroll-snap-type: y mandatory;
       scroll-behavior: smooth;
     }
 
     .slide {
-      height: 100vh;
-      scroll-snap-align: start;
+      position: relative;
+      min-height: 100%;
       padding: 4rem 6rem;
+      scroll-snap-align: start;
       display: flex;
-      flex-direction: column;
-      justify-content: center;
+      align-items: center;
       background-size: cover;
       background-position: center;
-      position: relative;
     }
 
     .slide::before {
@@ -94,257 +106,345 @@
       max-width: 900px;
     }
 
-    h1, h2 {
-      font-weight: 700;
+    h1, h2, h3 {
+      font-weight: 800;
     }
 
-    h1 i, h2 i {
-      color: #38bdf8;
-      margin-right: 0.5rem;
-    }
-
-    ul li {
-      margin-bottom: 0.75rem;
-      font-size: 1.1rem;
-    }
-
-    .chapter-title {
+    h1 {
       font-size: 3rem;
+      margin-bottom: 1.5rem;
+    }
+
+    h2 {
+      font-size: 2.4rem;
+      margin-bottom: 1.25rem;
+    }
+
+    h3 {
+      font-size: 1.8rem;
+      margin-bottom: 1rem;
+    }
+
+    p, li {
+      font-size: 1.2rem;
+      line-height: 1.6;
+    }
+
+    ul {
+      padding-left: 1.5rem;
+    }
+
+    .icon {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      color: #38bdf8;
     }
 
     /* Background themes */
-    .bg-goals { background-image: url("https://images.unsplash.com/photo-1498050108023-c5249f4df085"); }
-    .bg-priorities { background-image: url("https://images.unsplash.com/photo-1518770660439-4636190af475"); }
-    .bg-process { background-image: url("https://images.unsplash.com/photo-1529333166437-7750a6dd5a70"); }
-    .bg-techdebt { background-image: url("https://images.unsplash.com/photo-1581090700227-1e37b190418e"); }
-    .bg-oss { background-image: url("https://images.unsplash.com/photo-1531482615713-2afd69097998"); }
-    .bg-questions { background-image: url("https://images.unsplash.com/photo-1553877522-43269d4ea984"); }
+    .bg-goals {
+      background-image: url("https://images.unsplash.com/photo-1504384308090-c894fdcc538d");
+    }
 
-    /* Responsive */
-    @media (max-width: 992px) {
-      .sidebar {
-        display: none;
-      }
-      .slide {
-        padding: 3rem 2rem;
-      }
+    .bg-priority {
+      background-image: url("https://images.unsplash.com/photo-1551288049-bebda4e38f71");
+    }
+
+    .bg-learning {
+      background-image: url("https://images.unsplash.com/photo-1522071820081-009f0129c71c");
+    }
+
+    .bg-techdebt {
+      background-image: url("https://images.unsplash.com/photo-1567427017947-545c5f8d16ad");
+    }
+
+    .bg-opensource {
+      background-image: url("https://images.unsplash.com/photo-1518770660439-4636190af475");
+    }
+
+    .bg-questions {
+      background-image: url("https://images.unsplash.com/photo-1529333166437-7750a6dd5a70");
+    }
+
+    .chapter-badge {
+      display: inline-block;
+      padding: 0.4rem 0.75rem;
+      background: #1e293b;
+      border-radius: 999px;
+      font-size: 0.9rem;
+      margin-bottom: 1rem;
+      color: #e2e8f0;
     }
   </style>
 </head>
-
 <body>
 <div class="app">
-
   <!-- Sidebar -->
-  <nav class="sidebar">
-    <h6>Chapters</h6>
-    <a href="#intro">Role Success</a>
-    <a href="#experience">Prior Experience</a>
-    <a href="#oss">Open Source & AI</a>
-    <a href="#marianne">Questions: Marianne & Roar</a>
-    <a href="#dni">Questions: D&I Seniors</a>
-    <a href="#igor">Questions: Igor & Kristin</a>
-  </nav>
+  <aside class="sidebar">
+    <h5><i class="fa-solid fa-layer-group"></i> Chapters</h5>
+    <nav class="toc">
+      <a href="#ch-success">Role Success</a>
+      <a href="#ch-techdebt">Technical Debt</a>
+      <a href="#ch-opensource">Open Source & AI</a>
+      <a href="#ch-marianne">Marianne & Roar</a>
+      <a href="#ch-di">D&amp;I Seniors</a>
+      <a href="#ch-igor">Igor & Kristin</a>
+    </nav>
+  </aside>
 
   <!-- Slides -->
   <main class="slides">
 
-    <!-- Intro Chapter -->
-    <section id="intro" class="slide bg-goals">
+    <!-- Chapter: Role Success -->
+    <section id="ch-success" class="slide bg-goals">
       <div class="slide-content">
-        <h1 class="chapter-title"><i class="fa-solid fa-bullseye"></i>Role Success</h1>
-        <p class="lead mt-4">
-          What matters most to succeed in this role, and how it should work
-          practically to deliver value.
+        <span class="chapter-badge">Chapter · Role Success</span>
+        <h1>What Matters Most to Succeed</h1>
+        <p>
+          This role delivers value by translating a broad mandate into
+          concrete, measurable outcomes, continuously refined through
+          feedback and impact.
         </p>
       </div>
     </section>
 
     <section class="slide bg-goals">
       <div class="slide-content">
-        <h2><i class="fa-solid fa-diagram-project"></i>Well-Defined Goals</h2>
-        <ul>
-          <li>Clear short- and long-term goals are essential in a broad role</li>
-          <li>Translate ambiguity into concrete, measurable outcomes</li>
-        </ul>
+        <div class="icon"><i class="fa-solid fa-bullseye"></i></div>
+        <h2>Well-Defined Goals</h2>
+        <p>
+          Clearly defined short- and long-term goals are essential.
+          Without them, the breadth of the role risks becoming unfocused.
+        </p>
       </div>
     </section>
 
-    <section class="slide bg-priorities">
+    <section class="slide bg-priority">
       <div class="slide-content">
-        <h2><i class="fa-solid fa-arrows-rotate"></i>Iterative Refinement</h2>
-        <ul>
-          <li>Revisit and refine goals continuously</li>
-          <li>Apply agile thinking to role impact and scope</li>
-        </ul>
+        <div class="icon"><i class="fa-solid fa-rotate"></i></div>
+        <h2>Iterative Refinement</h2>
+        <p>
+          Goals should be revisited and refined iteratively—similar to
+          agile development cycles, but applied to the scope and impact
+          of the role itself.
+        </p>
       </div>
     </section>
 
-    <section class="slide bg-priorities">
+    <section class="slide bg-priority">
       <div class="slide-content">
-        <h2><i class="fa-solid fa-scale-balanced"></i>Hard Prioritization</h2>
+        <div class="icon"><i class="fa-solid fa-scale-balanced"></i></div>
+        <h2>Hard Prioritization for Impact</h2>
         <ul>
-          <li>Optimize for impact across product teams</li>
+          <li>Balance priorities across product teams</li>
           <li>Minimize duplicate effort and functionality</li>
-          <li>Shared model services over per-team models</li>
-          <li>Identify shared libraries opportunities</li>
+          <li>Prefer shared model services over per-team models</li>
+          <li>Identify opportunities for shared libraries</li>
         </ul>
       </div>
     </section>
 
-    <section class="slide bg-process">
+    <section class="slide bg-priority">
       <div class="slide-content">
-        <h2><i class="fa-solid fa-screwdriver-wrench"></i>Avoid Overengineering</h2>
-        <ul>
-          <li>Match solutions to current team size</li>
-          <li>Favor pragmatic, evolvable architectures</li>
-        </ul>
+        <div class="icon"><i class="fa-solid fa-gears"></i></div>
+        <h2>Avoid Overengineering</h2>
+        <p>
+          Solutions should be appropriate for the current team size and
+          maturity—complexity is a cost.
+        </p>
       </div>
     </section>
 
-    <section class="slide bg-process">
+    <section class="slide bg-learning">
       <div class="slide-content">
-        <h2><i class="fa-solid fa-seedling"></i>Start with Learning</h2>
-        <ul>
-          <li>Understand current datasets, systems, and processes</li>
-          <li>Identify low-hanging fruit</li>
-          <li>Course-correct based on outcomes</li>
-        </ul>
+        <div class="icon"><i class="fa-solid fa-seedling"></i></div>
+        <h2>Start with Learning & Low-Hanging Fruit</h2>
+        <p>
+          Learn existing datasets, systems, and processes first. Identify
+          low-effort, high-impact improvements, then course-correct
+          based on outcomes.
+        </p>
       </div>
     </section>
 
-    <!-- Experience Chapter -->
-    <section id="experience" class="slide bg-techdebt">
+    <!-- Chapter: Technical Debt -->
+    <section id="ch-techdebt" class="slide bg-techdebt">
       <div class="slide-content">
-        <h1 class="chapter-title"><i class="fa-solid fa-clock-rotate-left"></i>Prior Experience (STAR)</h1>
+        <span class="chapter-badge">Chapter · Previous Experience</span>
+        <h1>Technical Debt: A STAR Story</h1>
       </div>
     </section>
 
     <section class="slide bg-techdebt">
       <div class="slide-content">
-        <h2><i class="fa-solid fa-triangle-exclamation"></i>Situation</h2>
-        <ul>
-          <li>Short-term delivery goals accumulated significant technical debt</li>
-          <li>Low leadership awareness of development overhead</li>
-        </ul>
+        <h2>Situation</h2>
+        <p>
+          Short-term delivery goals had accumulated significant technical
+          debt, while leadership underestimated the resulting development
+          overhead.
+        </p>
       </div>
     </section>
 
     <section class="slide bg-techdebt">
       <div class="slide-content">
-        <h2><i class="fa-solid fa-list-check"></i>Task</h2>
-        <ul>
-          <li>Get leadership buy-in for prioritizing cleanup</li>
-        </ul>
+        <h2>Task</h2>
+        <p>
+          Secure leadership buy-in to prioritize technical debt cleanup.
+        </p>
       </div>
     </section>
 
     <section class="slide bg-techdebt">
       <div class="slide-content">
-        <h2><i class="fa-solid fa-coins"></i>Action</h2>
-        <ul>
-          <li>Quantified architectural limitations in monetary terms</li>
-        </ul>
+        <h2>Action</h2>
+        <p>
+          Architectural limitations were translated into monetary cost,
+          framing technical debt as financial debt.
+        </p>
       </div>
     </section>
 
     <section class="slide bg-techdebt">
       <div class="slide-content">
-        <h2><i class="fa-solid fa-chart-line"></i>Result</h2>
+        <h2>Result</h2>
+        <p>
+          A 20% cleanup budget for one year addressed nearly all technical
+          debt that had been slowing down development.
+        </p>
+      </div>
+    </section>
+
+    <!-- Chapter: Open Source & AI -->
+    <section id="ch-opensource" class="slide bg-opensource">
+      <div class="slide-content">
+        <span class="chapter-badge">Chapter · Perspective</span>
+        <h1>Open Source & AI for Media</h1>
+      </div>
+    </section>
+
+    <section class="slide bg-opensource">
+      <div class="slide-content">
+        <h2>AI Enables New Stories</h2>
+        <p>
+          Especially in large-scale public record analysis, transparency
+          investigations, and structured extraction across decades of
+          archives.
+        </p>
+      </div>
+    </section>
+
+    <section class="slide bg-opensource">
+      <div class="slide-content">
+        <h2>LLMs + Data Science</h2>
+        <p>
+          LLMs extract numerical data from unstructured text; traditional
+          data science then extracts the story from those numbers.
+        </p>
+      </div>
+    </section>
+
+    <section class="slide bg-opensource">
+      <div class="slide-content">
+        <h2>Open Source as Risk Reduction</h2>
+        <p>
+          Code is a necessary liability. Open source spreads maintenance
+          cost and risk across users and contributors.
+        </p>
+      </div>
+    </section>
+
+    <section class="slide bg-opensource">
+      <div class="slide-content">
+        <h2>Synergy & Reuse</h2>
+        <p>
+          Open source enables synergy between otherwise unrelated
+          ventures with overlapping needs.
+        </p>
+      </div>
+    </section>
+
+    <section class="slide bg-opensource">
+      <div class="slide-content">
+        <h2>Reusable Power via DSLs</h2>
+        <p>
+          Domain-specific languages can deliver generic, reusable
+          functionality to non-coding power users—more impactful than
+          one-off code.
+        </p>
+      </div>
+    </section>
+
+    <!-- Chapter: Marianne & Roar -->
+    <section id="ch-marianne" class="slide bg-questions">
+      <div class="slide-content">
+        <span class="chapter-badge">Chapter · Questions</span>
+        <h1>Questions for Marianne & Roar</h1>
+      </div>
+    </section>
+
+    <section class="slide bg-questions">
+      <div class="slide-content">
         <ul>
-          <li>20% cleanup budget for one year</li>
-          <li>Nearly all development-blocking tech debt addressed</li>
-        </ul>
-      </div>
-    </section>
-
-    <!-- OSS Chapter -->
-    <section id="oss" class="slide bg-oss">
-      <div class="slide-content">
-        <h1 class="chapter-title"><i class="fa-brands fa-osi"></i>Open Source & AI for Media</h1>
-      </div>
-    </section>
-
-    <section class="slide bg-oss">
-      <div class="slide-content">
-        <h2><i class="fa-solid fa-newspaper"></i>AI-Enabled Storytelling</h2>
-        <ul>
-          <li>Large-scale public record analysis</li>
-          <li>Transparency investigations</li>
-          <li>Decades-spanning text archives</li>
-        </ul>
-      </div>
-    </section>
-
-    <section class="slide bg-oss">
-      <div class="slide-content">
-        <h2><i class="fa-solid fa-robot"></i>LLMs + Data Science</h2>
-        <ul>
-          <li>Extract numerical data from unstructured text</li>
-          <li>Use traditional data science to surface stories</li>
-        </ul>
-      </div>
-    </section>
-
-    <section class="slide bg-oss">
-      <div class="slide-content">
-        <h2><i class="fa-solid fa-code-branch"></i>Open Source as Risk Reduction</h2>
-        <ul>
-          <li>Code is a necessary liability</li>
-          <li>Open source distributes cost and risk</li>
-          <li>Enables synergy across unrelated businesses</li>
-        </ul>
-      </div>
-    </section>
-
-    <section class="slide bg-oss">
-      <div class="slide-content">
-        <h2><i class="fa-solid fa-language"></i>Reusable Abstractions</h2>
-        <ul>
-          <li>Domain-specific languages for power users</li>
-          <li>From textproc experience to docetl contribution</li>
-        </ul>
-      </div>
-    </section>
-
-    <!-- Questions Chapters -->
-    <section id="marianne" class="slide bg-questions">
-      <div class="slide-content">
-        <h1 class="chapter-title"><i class="fa-solid fa-comments"></i>Questions: Marianne & Roar</h1>
-        <ul class="mt-4">
-          <li>How do you balance tools for recommendations, personalization, journalism, and productivity?</li>
+          <li>How do you balance tools for recommendations, personalization, newsroom, and productivity?</li>
           <li>How do you balance experimentation vs productization?</li>
-          <li>What works well vs not in D&I and product collaboration?</li>
-          <li>Biggest hurdles getting AI services into active use?</li>
-          <li>Biggest architectural risks or technical debt?</li>
-          <li>When do you decide an AI experiment isn’t working?</li>
-          <li>How does Data/AI platform evolve vs Core Engineering?</li>
-          <li>Current dataflow patterns? Is there a system map?</li>
+          <li>What works well vs not in D&amp;I and product collaboration?</li>
+          <li>Biggest hurdles to getting new AI services into use?</li>
         </ul>
       </div>
     </section>
 
-    <section id="dni" class="slide bg-questions">
+    <section class="slide bg-questions">
       <div class="slide-content">
-        <h1 class="chapter-title"><i class="fa-solid fa-people-group"></i>Questions: D&amp;I Seniors</h1>
-        <ul class="mt-4">
+        <ul>
+          <li>Biggest architectural risks or technical debt today?</li>
+          <li>How do you decide when an AI experiment isn’t working?</li>
+          <li>How should Data/AI platforms evolve vs Core Engineering?</li>
+          <li>Current dataflow: streaming, batching, events?</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Chapter: D&I Seniors -->
+    <section id="ch-di" class="slide bg-questions">
+      <div class="slide-content">
+        <span class="chapter-badge">Chapter · Questions</span>
+        <h1>Questions for D&amp;I Seniors</h1>
+      </div>
+    </section>
+
+    <section class="slide bg-questions">
+      <div class="slide-content">
+        <ul>
           <li>How do you collaborate with the Dhaka team?</li>
-          <li>Sync vs async communication balance?</li>
-          <li>Division of responsibility for experimental systems?</li>
+          <li>Where is the line between Dhaka and local responsibilities?</li>
           <li>How is week-to-week work organized?</li>
           <li>Team strengths vs weaker areas?</li>
-          <li>Missing tools, libraries, or frameworks?</li>
-          <li>How are experiments and model versions tracked?</li>
-          <li>How is production performance monitored?</li>
-          <li>How is GDPR handled in model training?</li>
         </ul>
       </div>
     </section>
 
-    <section id="igor" class="slide bg-questions">
+    <section class="slide bg-questions">
       <div class="slide-content">
-        <h1 class="chapter-title"><i class="fa-solid fa-flag-checkered"></i>Questions: Igor & Kristin</h1>
-        <ul class="mt-4">
+        <ul>
+          <li>Which tools or libraries do you miss the most?</li>
+          <li>How do you track experiments and model versions?</li>
+          <li>How do you track production performance?</li>
+          <li>How is GDPR compliance handled in model training?</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Chapter: Igor & Kristin -->
+    <section id="ch-igor" class="slide bg-questions">
+      <div class="slide-content">
+        <span class="chapter-badge">Chapter · Questions</span>
+        <h1>Questions for Igor & Kristin</h1>
+      </div>
+    </section>
+
+    <section class="slide bg-questions">
+      <div class="slide-content">
+        <ul>
           <li>In 3 months, what should I have learned?</li>
           <li>In 18 months, what defines success?</li>
         </ul>
@@ -355,19 +455,24 @@
 </div>
 
 <script>
-  const sections = document.querySelectorAll(".slide");
-  const navLinks = document.querySelectorAll(".sidebar a");
-  const slidesContainer = document.querySelector(".slides");
+  // Highlight active TOC item based on scroll
+  const slides = document.querySelectorAll(".slide");
+  const tocLinks = document.querySelectorAll(".toc a");
 
-  slidesContainer.addEventListener("scroll", () => {
-    let index = Math.round(slidesContainer.scrollTop / window.innerHeight);
-    navLinks.forEach(link => link.classList.remove("active"));
-    const id = sections[index]?.id;
-    if (id) {
-      document.querySelector(`.sidebar a[href="#${id}"]`)?.classList.add("active");
-    }
-  });
+  const observer = new IntersectionObserver(
+    entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting && entry.target.id) {
+          tocLinks.forEach(link => link.classList.remove("active"));
+          const active = document.querySelector(`.toc a[href="#${entry.target.id}"]`);
+          if (active) active.classList.add("active");
+        }
+      });
+    },
+    { threshold: 0.6 }
+  );
+
+  slides.forEach(slide => observer.observe(slide));
 </script>
-
 </body>
 </html>
