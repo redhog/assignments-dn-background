@@ -51,7 +51,7 @@
  
   * Open Source
     Situation: Management and board from physics and engineering
-      background with expericence of open source.
+      background without expericence of open source.
     Task: Increase value of non-core IP
     Action: Convinced management of the value open source for lowering
       maintenance work and getting market goodwill.    
