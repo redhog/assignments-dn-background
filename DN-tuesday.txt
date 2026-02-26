@@ -1,4 +1,5 @@
-- Short summary of what is most important to succeed in this role - maybe even how the role should work practically to provide value
+- Short summary of what is most important to succeed in this role -
+  maybe even how the role should work practically to provide value
   * Well-defined short- and long-term goals - it's a broad role, so,
     so translating it into concrete, measurable outcomes is essential.
   * Concrete goals should be revisited and refined iteratively -
@@ -24,6 +25,29 @@
     Action: Putting monetary value on architectural limitations
     Result: 20% cleanup budget for a year resulted in nearly all
       tech debt slowing down development being adressed.
+
+  * From physics to software
+    Situation: Multidisciplinary team consisting of 2 physicist with
+      limited coding experience, 1 front-end dev and me. Management
+      had physics background, not software.
+    Task: Build a production ready system for geophysics.
+    Action(s): Teach python data science ecosystem & software design
+      principles to physicists, teach django to front-end dev to become
+      full-stack. Get team to use an agine development methodology.
+    Result: Produced an full system for processing, inversion and
+      visualization of geophysical data within a year.
+
+  * PhD level code to production system
+    Situation: 12k lines single source file with machinelearning for
+      geophysics & geotechnics within a QGIS plugin written by multiple
+      PhD students over a few years with a lot unused and/or unknown code.
+    Task: Produce a tool for running data preparation, training &
+      prediction for production survey projects
+    Action: Ran the existing codebase under Coverage with normal use
+      of the software and deleted all unused code - 50% of all the code.
+    Result: A codebase possible to understand in terms of what the
+      functionality described by the physicists that could be extended
+      to a full stand alone tool.
 
 - Open source and AI for media
   - AI enables stories that would otherwise be practicall impossible -
